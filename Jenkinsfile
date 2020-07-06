@@ -1,8 +1,10 @@
 node {
-    checkout scm
-    def customImage = docker.build("my-image:1")
-
-    customImage.inside {
-        sh 'make test'
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make build-train-image'
+            }
+        }
     }
 }
