@@ -1,3 +1,3 @@
-FROM docker.dcube.devmail.ru/base/python-3.6:latest
+FROM python:3.8-slim
 
-RUN echo "Hello there from Docker"
+RUN python --version
