@@ -1,9 +1,9 @@
-node {
+pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                sh 'make build-train-image'
+                echo "Hello World!"
             }
         }
     }
