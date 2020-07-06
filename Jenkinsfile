@@ -1,14 +1,7 @@
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
-            }
-        }
+node {
+    def customImage = docker.build("my-image:1")
+
+    customImage.inside {
+        sh 'make test'
     }
 }
